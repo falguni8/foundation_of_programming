@@ -1,0 +1,6 @@
+(define (fun lst)
+    (cond ( (null? (cdr lst)) '()  )
+    (else (cons (car lst) ( fun (cdr lst) )) )
+    )
+)
+(display (fun '(1 2 3 4)) )
