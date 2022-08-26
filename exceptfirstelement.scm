@@ -1,0 +1,6 @@
+(define (except-first lst)
+    (cond ((null? lst) ('emptylist) )
+        (else (cdr lst))
+    )
+)
+(display (except-first '(1)) )
