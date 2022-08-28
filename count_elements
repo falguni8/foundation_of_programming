@@ -1,0 +1,16 @@
+//count a element
+(define (count-elements lst)
+    (cond ( (null?  lst) 0)
+          (else (+ 1 (count-elements (cdr lst)) ))
+    )
+)
+(display (count-elements '(1 2 3 4 5 6)))
+
+//count a specific element
+(define (count-elements lst ele)
+    (cond ( (null?  lst) 0)
+          ( (= (car lst) ele) (+ 1 (count-elements (cdr lst) ele)))
+          (else ( count-elements (cdr lst) ele ))
+    )
+)
+(display (count-elements '(1 2 2 3 4) 2))
