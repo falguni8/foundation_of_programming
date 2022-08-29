@@ -1,0 +1,15 @@
+(define (unique lst)
+    (define (present lst ele)
+        (cond 
+              ((null? lst)#f)
+              ((=(car lst) ele) #t)
+              (else (present (cdr lst) ele))
+        )
+    )
+    (cond 
+          ((null? lst)'())
+          ((present (cdr lst) (car lst)) (unique (cdr lst)))
+          (else (cons (car lst) (unique (cdr lst)))) 
+    )
+)
+(display (unique '(1 1 2 2 2 3 4 5)))
